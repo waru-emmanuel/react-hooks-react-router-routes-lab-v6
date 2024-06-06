@@ -1,4 +1,4 @@
-// src/routes.js
+
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Actors from "./pages/Actors";

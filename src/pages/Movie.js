@@ -1,4 +1,3 @@
-// src/pages/Movie.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
@@ -8,12 +7,9 @@ function Movie() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    fetch("/movies.json")
+    fetch(`http://localhost:4000/movies/${id}`)
       .then((response) => response.json())
-      .then((data) => {
-        const movie = data.movies.find((m) => m.id === parseInt(id));
-        setMovie(movie);
-      });
+      .then((data) => setMovie(data));
   }, [id]);
 
   if (!movie) {

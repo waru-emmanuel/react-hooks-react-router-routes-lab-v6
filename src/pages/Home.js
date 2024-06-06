@@ -7,9 +7,9 @@ function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("/movies.json")
+    fetch("http://localhost:4000/movies")
       .then((response) => response.json())
-      .then((data) => setMovies(data.movies));
+      .then((data) => setMovies(data));
   }, []);
 
   return (
